@@ -28,3 +28,33 @@ int main() {
     cout << cnt;
     return 0;
 }
+
+
+#include <iostream>
+
+bool isEvenOnes(int num) {
+    int count = 0;
+    
+    while (num > 0) {
+        if (num & 1) {
+            count ^= 1;
+        }
+        num >>= 1;
+    }
+    
+    return count == 0;
+}
+
+int main() {
+    int number;
+    std::cout << "Podaj liczbe: ";
+    std::cin >> number;
+    
+    if (isEvenOnes(number)) {
+        std::cout << "Liczba jedynek w reprezentacji binarnej jest parzysta." << std::endl;
+    } else {
+        std::cout << "Liczba jedynek w reprezentacji binarnej nie jest parzysta." << std::endl;
+    }
+    
+    return 0;
+}
