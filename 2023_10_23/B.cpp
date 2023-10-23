@@ -1,3 +1,7 @@
+//Bbędzie działał niczym kalkulator: wczyta z klawiatury dwie zmienne typu double i wykona na nich wybrane przez użytkownika działanie dwuargumentowe. 
+//Każdy rodzaj działania arytmetycznego powinien wykonywać się w osobnej funkcji.
+
+
 #include <iostream>
 
 using namespace std;
