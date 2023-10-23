@@ -1,3 +1,7 @@
+//wczyta z klawiatury trzy zmienne typu char, a następnie sprawdzi, czy wśród nich znajdują się cyfry. 
+//Jeśli tak, powinien przekazać je do funkcji, która zliczy i zwróci ich sumę. Program na koniec powinien podać sumę użykownikowi. 
+//Jeśli wśrod znaków nie będzie liczb, ma zostać wyświetlony komunikat o ich braku. Proszę wykorzystać mechanizm przeciążania funkcji.
+
 #include <iostream>
 
 using namespace std;
