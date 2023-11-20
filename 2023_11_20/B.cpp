@@ -64,16 +64,6 @@ public:
         }
         cout << std::endl;
     }
-
-    ~ProcessQueue() {
-        Node* temp;
-        while (front != nullptr) {
-            temp = front;
-            front = front->next;
-            delete temp;
-        }
-        rear = nullptr;
-    }
 };
 
 int main() {
