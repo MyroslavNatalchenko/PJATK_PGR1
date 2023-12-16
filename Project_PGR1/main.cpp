@@ -1,15 +1,21 @@
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 
 using namespace std;
 const int N=10000;
 class Book {
 public:
+    int index;
     string surname=" ";
     string name=" ";
     string book_name=" ";
     string year_of_publishing=" ";
     string ISBN=" ";
+
+    bool operator<(const Book& other) const {
+        return surname < other.surname;
+    }
 };
 
 void add_Book(Book mas[], int &N) {
@@ -36,8 +42,8 @@ void output_library(Book mas[], int N) {
 
         for (int i = 0; i < N; ++i) {
             if (i==0)
-                cout << "Your Library:\n" << "Author name" << "\tAuthor Surname" << "\tBook name" << "\tYear of publishing" << "\tISBN" << "\n";
-            cout << mas[i].surname << '\t' << mas[i].name << '\t' << mas[i].book_name << '\t' << mas[i].year_of_publishing << '\t' << mas[i].ISBN << '\n';
+                cout << "Your Library:\n" << "Index" << "\tSurname" << "\tName" << "\tBook\t" << "\tYear" << "\tISBN" << "\n";
+            cout << mas[i].index << '\t' << mas[i].surname << '\t' << mas[i].name << '\t' << mas[i].book_name << '\t' << mas[i].year_of_publishing << '\t' << mas[i].ISBN << '\n';
         }
     }
 }
@@ -107,25 +113,27 @@ int main()
         }
         books.close();
     }
+    sort(mas,mas+cnt);
+    for (int i=0;i<cnt;i++)
+        mas[i].index=i+1;
 
     output_library(mas,cnt);
-
-    /*
-     * do{
-        cout << "Dodac studenta: nacisnij 1. \nPokazac liste studentow: nacisnij 2. \nZakonczyc dzalanie programu: nacisnij 3.\n";
+    char choose;
+    do{
+        cout << "Add book to library: press 1. \nShow library: press 2. \nStop: press 3\n";
         cin >> choose;
         switch (choose) {
             case '1':
-                dodajStudenta(mas,cnt);
+                add_Book(mas,cnt);
                 break;
             case '2':
-                output_lista(mas,cnt);
+                output_library(mas,cnt);
                 break;
             case '3':
-                cout << "Wychodzimy.\n";
+                cout << "Work stopped.\n";
                 break;
         }
     } while (choose!='3');
-    */
+
     return 0;
 }
