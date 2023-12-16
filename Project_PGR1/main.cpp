@@ -28,18 +28,20 @@ void add_Book(Book mas[], int &N) {
     cout << "Book was added to Library.\n";
     N++;
 }
-/*
-void output_lista(const Student mas[], int N) {
+
+void output_library(Book mas[], int N) {
     if (N == 0)
-        cout << "Lista jest pusta.\n";
+        cout << "Your library id empty.\n";
     else {
-        cout << "Lista:\n";
+
         for (int i = 0; i < N; ++i) {
-            std::cout << "Imię: " << mas[i].imie << "\tNazwisko: " << mas[i].nazwisko << "\tNr indeksu: " << mas[i].indeks << "\n";
+            if (i==0)
+                cout << "Your Library:\n" << "Author name" << "\tAuthor Surname" << "\tBook name" << "\tYear of publishing" << "\tISBN" << "\n";
+            cout << mas[i].surname << '\t' << mas[i].name << '\t' << mas[i].book_name << '\t' << mas[i].year_of_publishing << '\t' << mas[i].ISBN << '\n';
         }
     }
 }
-*/
+
 
 int main()
 {
@@ -52,7 +54,7 @@ int main()
         while(getline(books,info))
         {
             int needable=0;
-            for (int i=0;i<info.size();i++)
+            for (int i=0; i<info.size(); i++)
             {
                 switch (needable) {
                     case 0:
@@ -65,7 +67,7 @@ int main()
                             needable++;
                         break;
                     case 1:
-                        if (info[i]!='|' && needable==1)
+                        if (info[i]!='|')
                             if (mas[cnt].name==" ")
                                 mas[cnt].name=info[i];
                             else
@@ -106,7 +108,7 @@ int main()
         books.close();
     }
 
-    add_Book(mas,cnt);
+    output_library(mas,cnt);
 
     /*
      * do{
