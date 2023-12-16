@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string.h>
+#include <fstream>
 
 using namespace std;
 const int N=10000;
@@ -11,18 +11,24 @@ public:
     string year_of_publishing=" ";
     string ISBN=" ";
 };
-/*
-void dodajStudenta(Student mas[], int &N) {
-    cout << "Podaj imię: \n";
-    cin >> mas[N].imie;
-    cout << "Podaj nazwisko: \n";
-    cin >> mas[N].nazwisko;
-    cout << "Podaj numer indeksu: \n";
-    cin >> mas[N].indeks;
-    cout << "Student zostal dodany.\n";
+
+void add_Book(Book mas[], int &N) {
+    cout << "Write surname of author: \n";
+    cin >> mas[N].surname;
+    cout << "Write name of author: \n";
+    cin >> mas[N].name;
+    cout << "Write book name: \n";
+    _flushall();
+    getline(cin,mas[N].book_name);
+    cout << "Write year of publishing: \n";
+    cin >> mas[N].year_of_publishing;
+    cout << "Write book's ISBN: \n";
+    cin >> mas[N].ISBN;
+    cout << mas[N].surname << '\t' << mas[N].name << '\t' << mas[N].book_name << '\t' << mas[N].year_of_publishing << '\t' << mas[N].ISBN << '\n';
+    cout << "Book was added to Library.\n";
     N++;
 }
-
+/*
 void output_lista(const Student mas[], int N) {
     if (N == 0)
         cout << "Lista jest pusta.\n";
@@ -39,70 +45,68 @@ int main()
 {
     Book mas[N];
     int cnt=0;
-    freopen("books.txt","r",stdin);
+    ifstream books ("books.txt");
     string info;
-    while (getline(cin,info))
+    while (books.good())
     {
-        int needable=0;
-        for (int i=0;i<info.size();i++)
+        while(getline(books,info))
         {
-            if (info[i]!='|' && needable==0)
-                if (mas[cnt].surname==" ")
-                    mas[cnt].surname=info[i];
-                else
-                    mas[cnt].surname+=info[i];
-            else
+            int needable=0;
+            for (int i=0;i<info.size();i++)
             {
-                if (needable==0){
-                    needable++;
-                    i++;
+                switch (needable) {
+                    case 0:
+                        if (info[i]!='|')
+                            if (mas[cnt].surname==" ")
+                                mas[cnt].surname=info[i];
+                            else
+                                mas[cnt].surname+=info[i];
+                        else
+                            needable++;
+                        break;
+                    case 1:
+                        if (info[i]!='|' && needable==1)
+                            if (mas[cnt].name==" ")
+                                mas[cnt].name=info[i];
+                            else
+                                mas[cnt].name+=info[i];
+                        else
+                            needable++;
+                        break;
+                    case 2:
+                        if (info[i]!='|')
+                            if (mas[cnt].book_name==" ")
+                                mas[cnt].book_name=info[i];
+                            else
+                                mas[cnt].book_name+=info[i];
+                        else
+                            needable++;
+                        break;
+                    case 3:
+                        if (info[i]!='|')
+                            if (mas[cnt].year_of_publishing==" ")
+                                mas[cnt].year_of_publishing=info[i];
+                            else
+                                mas[cnt].year_of_publishing+=info[i];
+                        else
+                            needable++;
+                        break;
+                    case 4:
+                        if (info[i]!='|')
+                            if (mas[cnt].ISBN==" ")
+                                mas[cnt].ISBN=info[i];
+                            else
+                                mas[cnt].ISBN+=info[i];
+                        break;
                 }
             }
-            if (info[i]!='|' && needable==1)
-                if (mas[cnt].name==" ")
-                    mas[cnt].name=info[i];
-                else
-                    mas[cnt].name+=info[i];
-            else
-            {
-                if (needable==1){
-                    needable++;
-                    i++;
-                }
-            }
-            if (info[i]!='|' && needable==2)
-                if (mas[cnt].book_name==" ")
-                    mas[cnt].book_name=info[i];
-                else
-                    mas[cnt].book_name+=info[i];
-            else
-            {
-                if (needable==2){
-                    needable++;
-                    i++;
-                }
-            }
-            if (info[i]!='|' && needable==3)
-                if (mas[cnt].year_of_publishing==" ")
-                    mas[cnt].year_of_publishing=info[i];
-                else
-                    mas[cnt].year_of_publishing+=info[i];
-            else
-            {
-                if (needable==3){
-                    needable++;
-                    i++;
-                }
-            }
-            if (info[i]!='|' && needable==4)
-                if (mas[cnt].ISBN==" ")
-                    mas[cnt].ISBN=info[i];
-                else
-                    mas[cnt].ISBN+=info[i];
+            cout << mas[cnt].surname << '\t' << mas[cnt].name << '\t' << mas[cnt].book_name << '\t' << mas[cnt].year_of_publishing << '\t' << mas[cnt].ISBN << '\n';
+            cnt++;
         }
-        cout << mas[cnt].surname << '\t' << mas[cnt].name << '\t' << mas[cnt].book_name << '\t' << mas[cnt].year_of_publishing << '\t' << mas[cnt].ISBN << '\n';
-        cnt++;
+        books.close();
     }
+
+    add_Book(mas,cnt);
 
     /*
      * do{
