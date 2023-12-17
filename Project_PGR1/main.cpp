@@ -48,17 +48,32 @@ void output_library(Book mas[], int N) {
     }
 }
 
+void erase_element(Book mas[],int&N,int k)
+{
+    if (N==k)
+        N--;
+    else
+    {
+        for (int i=k-1;i<N-1;i++)
+            swap(mas[i],mas[i+1]);
+        N--;
+        for (int i=0;i<N;i++)
+            mas[i].index=i+1;
+    }
+}
 
 int main()
 {
     Book mas[N];
     int cnt=0;
+
     ifstream books ("books.txt");
     string info;
     while (books.good())
     {
         while(getline(books,info))
         {
+            mas[cnt].index=cnt+1;
             int needable=0;
             for (int i=0; i<info.size(); i++)
             {
@@ -108,19 +123,18 @@ int main()
                         break;
                 }
             }
-            cout << mas[cnt].surname << '\t' << mas[cnt].name << '\t' << mas[cnt].book_name << '\t' << mas[cnt].year_of_publishing << '\t' << mas[cnt].ISBN << '\n';
             cnt++;
         }
         books.close();
     }
+    output_library(mas,cnt);
     sort(mas,mas+cnt);
     for (int i=0;i<cnt;i++)
         mas[i].index=i+1;
-
     output_library(mas,cnt);
     char choose;
     do{
-        cout << "Add book to library: press 1. \nShow library: press 2. \nStop: press 3\n";
+        cout << "Add book to library: press 1. \nShow library: press 2. \nErase book k: press 3. \nStop: press 4\n";
         cin >> choose;
         switch (choose) {
             case '1':
@@ -130,6 +144,13 @@ int main()
                 output_library(mas,cnt);
                 break;
             case '3':
+                int k;
+                cout << "Write k: \n";
+                cin >> k;
+                erase_element(mas,cnt,k);
+                output_library(mas,cnt);
+                break;
+            case '4':
                 cout << "Work stopped.\n";
                 break;
         }
