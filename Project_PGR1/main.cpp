@@ -12,11 +12,8 @@ public:
     string book_name=" ";
     string year_of_publishing=" ";
     string ISBN=" ";
-
-    bool operator<(const Book& other) const {
-        return surname < other.surname;
-    }
 };
+
 
 void add_Book(Book mas[], int &N) {
     cout << "Write surname of author: \n";
@@ -60,6 +57,10 @@ void erase_element(Book mas[],int&N,int k)
         for (int i=0;i<N;i++)
             mas[i].index=i+1;
     }
+}
+
+bool comparator(const Book &a, const Book &b) {
+    return a.surname < b.surname;
 }
 
 int main()
@@ -128,7 +129,7 @@ int main()
         books.close();
     }
     output_library(mas,cnt);
-    sort(mas,mas+cnt);
+    sort(mas,mas+cnt, comparator); //???????
     for (int i=0;i<cnt;i++)
         mas[i].index=i+1;
     output_library(mas,cnt);
