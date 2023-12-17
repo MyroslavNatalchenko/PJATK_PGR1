@@ -133,41 +133,52 @@ int main()
 {
     Book mas[N];
     int cnt=0;
-    char choose;
+    unsigned int choose;
     do{
         cout << "Parse book from file to library: press 1. "
                 "\nAdd book to library: press 2. "
-                "\nShow books in Library: press 3."
-                "\nErase book k: press 4."
+                "\nShow books in library: press 3."
+                "\nErase book with index k: press 4."
                 "\nErase last book: press 5."
-                "\nStop: press 6\n";
+                "\nSort by author's surname: press 6."
+                "\nSort by name of the book: press 7."
+                "\nStop: press 12\n";
         cin >> choose;
         switch (choose) {
-            case '1':
+            case 1:
                 parsing_file(mas,cnt);
                 break;
-            case '2':
+            case 2:
                 add_Book(mas,cnt);
                 break;
-            case '3':
+            case 3:
                 output_library(mas,cnt);
                 break;
-            case '4':
+            case 4:
                 int k;
+                output_library(mas,cnt);
                 cout << "Write k: \n";
                 cin >> k;
                 erase_element(mas,cnt,k);
                 output_library(mas,cnt);
                 break;
-            case '5':
+            case 5:
                 erase_element(mas,cnt,cnt);
                 output_library(mas,cnt);
                 break;
-            case '6':
+            case 6:
+                sort(mas,mas+cnt, comparator_1);
+                break;
+            case 7:
+                sort(mas,mas+cnt, comparator_2);
+                break;
+            case 12:
                 cout << "Work stopped.\n";
                 break;
+            default:
+                cout << "Wrong button. Press again \n";
+                break;
         }
-    } while (choose!='6');
-
+    } while (choose!=12);
     return 0;
 }
