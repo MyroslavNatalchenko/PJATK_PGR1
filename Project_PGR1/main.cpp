@@ -129,6 +129,46 @@ bool comparator_2(const Book &a, const Book &b) {
     return a.book_name < b.book_name;
 }
 
+void find_book(Book mas[], int cnt, int key)
+{
+    string info;
+    int amount=0;
+    switch (key)
+    {
+        case 1:
+            cout << "Write surname: \n";
+            cin >> info;
+            for (int i=0;i<cnt;i++)
+            {
+                if (mas[i].surname==info)
+                {
+                    if (amount==0)
+                        cout << "Books found: \n";
+                    cout << mas[i].index << '\t' << mas[i].surname << '\t' << mas[i].name << '\t' << mas[i].book_name << '\t' << mas[i].year_of_publishing << '\t' << mas[i].ISBN << '\n';
+                    amount++;
+                }
+            }
+            break;
+        case 2:
+            cout << "Write book name: \n";
+            _flushall();
+            getline(cin,info);
+            for (int i=0;i<cnt;i++)
+            {
+                if (mas[i].book_name==info)
+                {
+                    if (amount==0)
+                        cout << "Books found: \n";
+                    cout << mas[i].index << '\t' << mas[i].surname << '\t' << mas[i].name << '\t' << mas[i].book_name << '\t' << mas[i].year_of_publishing << '\t' << mas[i].ISBN << '\n';
+                    amount++;
+                }
+            }
+            break;
+    }
+    if (amount==0)
+        cout << "No books found";
+}
+
 int main()
 {
     Book mas[N];
@@ -142,6 +182,7 @@ int main()
                 "\nErase last book: press 5."
                 "\nSort by author's surname: press 6."
                 "\nSort by name of the book: press 7."
+                "\nFind book: press 8."
                 "\nStop: press 12\n";
         cin >> choose;
         switch (choose) {
@@ -171,6 +212,13 @@ int main()
                 break;
             case 7:
                 sort(mas,mas+cnt, comparator_2);
+                break;
+            case 8:
+                int key;
+                cout << "Find by surname: press 1. "
+                        "\nFind by book name: press 2.\n";
+                cin >> key;
+                find_book(mas,cnt,key);
                 break;
             case 12:
                 cout << "Work stopped.\n";
