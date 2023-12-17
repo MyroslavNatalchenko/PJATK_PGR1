@@ -17,8 +17,7 @@ public:
 
 void add_Book(Book mas[], int &N) {
     cout << "Write surname of author: \n";
-    cin >> mas[N].surname;
-    cout << "Write name of author: \n";
+    cin >> mas[N].surname;    cout << "Write name of author: \n";
     cin >> mas[N].name;
     cout << "Write book name: \n";
     _flushall();
