@@ -20,3 +20,54 @@ Fischer|Matthias|Ingenious Alchemy|2019|978-1-60735-480-7
 Gupta|Ananya|Ripples of Time|2020|978-1-60309-443-6
 Martinez|Lucia|Symbiotic Odyssey|2021|978-1-60980-928-2
 Thompson|Nathan|Quantum Paradox|2018|978-1-60309-189-3
+Brown|Sophie|Luminous Legacy|2019|978-1-60980-524-6
+Park|Jin-Ho|Dreamscape Dilemma|2023|978-1-60309-725-3
+Roberts|Daniel|Nebula's Embrace|2018|978-1-60980-346-4
+Gomez|Maria|Cryptic Codes|2020|978-1-60309-590-7
+Taylor|Oscar|Alchemy of Illusions|2022|978-1-60980-617-9
+Choi|Yuna|Whispers from the Void|2017|978-1-60735-298-8
+Harrison|Zara|Echoes of Destiny|2021|978-1-60980-763-3
+Cruz|Elena|Mystical Monoliths|2019|978-1-60309-376-7
+Khan|Jamal|Celestial Harmony|2022|978-1-60980-451-9
+Le|Hanh|Quantum Quandaries|2020|978-1-60309-666-9
+Liu|Wei|Eternal Equinox|2018|978-1-60980-289-8
+Mendoza|Rosa|Chimerical Chronicles|2023|978-1-60309-832-8
+Ng|Andrew|Reverie's Realm|2017|978-1-60735-170-7
+Perez|Gabriela|Digital Dreamscape|2021|978-1-60980-844-9
+Carter|David|Harmony of the Spheres|2019|978-1-60309-419-1
+Wu|Ling|Quantum Quest|2022|978-1-60980-697-1
+Fisher|Emily|Synchronicity Serendipity|2020|978-1-60309-588-4
+Lee|Hae-Won|Celestial Conundrum|2018|978-1-60980-363-5
+Garcia|Carlos|Echoes in the Aether|2021|978-1-60980-782-4
+Zhang|Wei|Chronicles of Cosmos|2017|978-1-60735-034-2
+Lin|Chen|Whirlwind Wonders|2019|978-1-60309-472-6
+Ramos|Isabel|Ephemeral Epoch|2023|978-1-60309-968-4
+Murphy|Ryan|Quantum Quotient|2018|978-1-60980-324-6
+Torres|Eva|Ethereal Echo|2020|978-1-60309-623-2
+Chung|Soo-Min|Solar Symphony|2021|978-1-60980-889-7
+Baker|Natalie|Labyrinth of Legends|2017|978-1-60735-257-5
+Yamamoto|Hiroshi|Vortex of Virtue|2022|978-1-60980-574-2
+Reyes|Ana|Spectral Serendipity|2019|978-1-60309-514-2
+Kim|Seo-Joon|Eternal Enigma|2023|978-1-60309-777-1
+Chen|Yi|Digital Divination|2018|978-1-60980-336-6
+Mason|Lily|Harmony's Haven|2020|978-1-60309-653-8
+Schmidt|Markus|Chronicles of Celestia|2021|978-1-60980-836-1
+Cohen|Leah|Quantum Quell|2017|978-1-60735-093-9
+Gupta|Raj|Whispers of the Void|2019|978-1-60309-495-5
+Thompson|Eva|Ethereal Odyssey|2022|978-1-60980-708-1
+Martinez|Diego|Voyage through Veil|2020|978-1-60309-609-7
+Nakamura|Yuki|Quantum Quest|2018|978-1-60980-355-7
+Hernandez|Sofia|Ephemeral Echo|2021|978-1-60980-773-9
+Nguyen|Minh|City of Illusions|2019|978-1-60309-459-5
+Garcia|Luis|Echoes from Eternity|2023|978-1-60309-921-7
+Liu|Mei|Celestial Cipher|2017|978-1-60735-007-6
+Kaur|Amardeep|Quantum Quandaries|2022|978-1-60980-664-0
+Rodriguez|Elena|Ephemeral Epoch|2020|978-1-60309-634-1
+Smith|Jackson|Vortex of Dreams|2018|978-1-60980-371-7
+Chang|Xin|City of Shadows|2021|978-1-60980-811-8
+O'Neill|Connor|Spectral Serenade|2019|978-1-60309-498-9
+Lee|Yoon-Hee|Chronicles of Cosmos|2023|978-1-60309-785-0
+Lopez|Mateo|Quantum Quotient|2017|978-1-60735-114-1
+Wang|Mei|Ethereal Echo|2022|978-1-60980-693-0
+Gomez|Antonio|Digital Divination|2018|978-1-60980-344-1
+Choi|Eun-Ji|Celestial Conundrum|2020|978-1-60309-611-2
