@@ -1,2 +1,22 @@
 Hoey|Maria|Animal Stories|2022|978-1-60309-502-0
 Fink|Jess|Chester 5000|2023|978-1-60309-535-8
+Lopez|Carlos|City of Echoes|2019|978-1-60980-896-3
+Graham|Olivia|Whispers in the Wind|2021|978-1-60735-924-6
+Chen|Wei|Technological Nexus|2020|978-1-60980-731-7
+Anderson|Lucas|Chronicles of Eternity|2022|978-1-60309-689-8
+Kapoor|Ayesha|Silent Shadows|2018|978-1-60735-611-5
+Barnes|Elijah|The Quantum Cipher|2023|978-1-60980-402-6
+Smith|Sophia|Ethereal Harmony|2021|978-1-60309-874-8
+Nguyen|Tran|Lost Constellations|2017|978-1-60980-523-8
+Ramirez|Diego|Infinite Horizons|2022|978-1-60735-736-5
+O'Connor|Megan|Threads of Destiny|2019|978-1-60309-267-8
+Wang|Li|Echoes of Eternity|2020|978-1-60980-642-6
+Sullivan|Emma|Spectral Serenade|2023|978-1-60309-911-0
+Kim|Min-Jae|Virtual Realms|2018|978-1-60735-369-5
+Turner|Isabel|Whirlwind Chronicles|2021|978-1-60980-315-9
+Hernandez|Javier|Solaris Ascendance|2017|978-1-60309-134-3
+Reyes|Carmen|Beyond the Binary|2022|978-1-60980-789-9
+Fischer|Matthias|Ingenious Alchemy|2019|978-1-60735-480-7
+Gupta|Ananya|Ripples of Time|2020|978-1-60309-443-6
+Martinez|Lucia|Symbiotic Odyssey|2021|978-1-60980-928-2
+Thompson|Nathan|Quantum Paradox|2018|978-1-60309-189-3
