@@ -96,7 +96,7 @@ void add_Book(Book mas[], int &N) {
 
 void output_library(Book mas[], int N) {
     if (N == 0)
-        cout << "Your library id empty.\n";
+        cout << "Your library is empty.\n";
     else {
 
         for (int i = 0; i < N; ++i) {
@@ -164,9 +164,37 @@ void find_book(Book mas[], int cnt, int key)
                 }
             }
             break;
+        case 3:
+            cout << "Write author's name: \n";
+            cin >> info;
+            for (int i=0;i<cnt;i++)
+            {
+                if (mas[i].name==info)
+                {
+                    if (amount==0)
+                        cout << "Books found: \n";
+                    cout << mas[i].index << '\t' << mas[i].surname << '\t' << mas[i].name << '\t' << mas[i].book_name << '\t' << mas[i].year_of_publishing << '\t' << mas[i].ISBN << '\n';
+                    amount++;
+                }
+            }
+            break;
+        case 4:
+            cout << "Write year of publishing: \n";
+            cin >> info;
+            for (int i=0;i<cnt;i++)
+            {
+                if (mas[i].year_of_publishing==info)
+                {
+                    if (amount==0)
+                        cout << "\nBooks found: \n";
+                    cout << mas[i].index << '\t' << mas[i].surname << '\t' << mas[i].name << '\t' << mas[i].book_name << '\t' << mas[i].year_of_publishing << '\t' << mas[i].ISBN << '\n';
+                    amount++;
+                }
+            }
+            break;
     }
     if (amount==0)
-        cout << "No books found";
+        cout << "\n\nNo books found\n";
 }
 
 void export_library(Book mas[],int cnt)
@@ -176,10 +204,10 @@ void export_library(Book mas[],int cnt)
     if (out.is_open())
     {
         for (int i=0;i<cnt;i++)
-            out << mas[i].index << '|' << mas[i].surname << '|' << mas[i].name << '|' << mas[i].book_name << '|' << mas[i].year_of_publishing << '|' << mas[i].ISBN << '\n';
+            out << mas[i].surname << '|' << mas[i].name << '|' << mas[i].book_name << '|' << mas[i].year_of_publishing << '|' << mas[i].ISBN << '\n';
     }
     out.close();
-    cout << "File has been written" << std::endl;
+    cout << "\n\nFile has been written\n" << std::endl;
 }
 
 int main()
@@ -188,7 +216,7 @@ int main()
     int cnt=0;
     unsigned int choose;
     do{
-        cout << "Parse book from file to library: press 1. "
+        cout << "\nParse book from file to library: press 1. "
                 "\nAdd book to library: press 2. "
                 "\nShow books in library: press 3."
                 "\nErase book with index k: press 4."
@@ -198,7 +226,7 @@ int main()
                 "\nFind book: press 8."
                 "\nExport library to file library.txt: press 9."
                 "\nDelete input file books.txt: press 10."
-                "\nStop: press 12\n";
+                "\nStop: press 11\n";
         cin >> choose;
         string answer;
         switch (choose) {
@@ -225,16 +253,25 @@ int main()
                 break;
             case 6:
                 sort(mas,mas+cnt, comparator_1);
+                for (int i=0;i<cnt;i++)
+                    mas[i].index=i+1;
                 break;
             case 7:
                 sort(mas,mas+cnt, comparator_2);
+                for (int i=0;i<cnt;i++)
+                    mas[i].index=i+1;
                 break;
             case 8:
                 int key;
-                cout << "Find by surname: press 1. "
-                        "\nFind by book name: press 2.\n";
+                cout << "\nFind by surname: press 1. "
+                        "\nFind by book name: press 2."
+                        "\nFind by author's name: press 3."
+                        "\nFind by year of publishing: press 4.\n";
                 cin >> key;
-                find_book(mas,cnt,key);
+                if (key<1 || key>4)
+                    cout << "Invalid button, try again.\n";
+                else
+                    find_book(mas,cnt,key);
                 break;
             case 9:
                 export_library(mas,cnt);
@@ -245,7 +282,7 @@ int main()
                 if (answer=="Yes")
                 {
                     remove("books.txt");
-                    cout << "File books.txt was removed";
+                    cout << "File books.txt was removed\n";
                 }
                 else
                 {
