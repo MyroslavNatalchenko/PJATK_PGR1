@@ -169,6 +169,19 @@ void find_book(Book mas[], int cnt, int key)
         cout << "No books found";
 }
 
+void export_library(Book mas[],int cnt)
+{
+    ofstream out;
+    out.open("library.txt");
+    if (out.is_open())
+    {
+        for (int i=0;i<cnt;i++)
+            out << mas[i].index << '|' << mas[i].surname << '|' << mas[i].name << '|' << mas[i].book_name << '|' << mas[i].year_of_publishing << '|' << mas[i].ISBN << '\n';
+    }
+    out.close();
+    cout << "File has been written" << std::endl;
+}
+
 int main()
 {
     Book mas[N];
@@ -183,8 +196,11 @@ int main()
                 "\nSort by author's surname: press 6."
                 "\nSort by name of the book: press 7."
                 "\nFind book: press 8."
+                "\nExport library to file library.txt: press 9."
+                "\nDelete input file books.txt: press 10."
                 "\nStop: press 12\n";
         cin >> choose;
+        string answer;
         switch (choose) {
             case 1:
                 parsing_file(mas,cnt);
@@ -220,13 +236,29 @@ int main()
                 cin >> key;
                 find_book(mas,cnt,key);
                 break;
-            case 12:
+            case 9:
+                export_library(mas,cnt);
+                break;
+            case 10:
+                cout << "Are you sure that you want to delete this file? [Yes/No]\n";
+                cin >> answer;
+                if (answer=="Yes")
+                {
+                    remove("books.txt");
+                    cout << "File books.txt was removed";
+                }
+                else
+                {
+                    cout << "Operation canceled \n";
+                }
+                break;
+            case 11:
                 cout << "Work stopped.\n";
                 break;
             default:
                 cout << "Wrong button. Press again \n";
                 break;
         }
-    } while (choose!=12);
+    } while (choose!=11);
     return 0;
 }
